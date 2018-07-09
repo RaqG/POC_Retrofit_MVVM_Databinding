@@ -2,9 +2,9 @@
 Prova de Conceito (POC) para a utilização do Retrofit, MVVM e Databinding.
 
 API:
- - The Movie Database
-    https://www.themoviedb.org/documentation/api
-    OBS: necessário se registrar para obter uma API Key.
+ * The Movie Database
+   * https://www.themoviedb.org/documentation/api
+   * OBS: necessário se registrar para obter uma API Key.
  
  Libs:
  - Material Design
