@@ -1,5 +1,6 @@
 package br.com.madebygallo.poc_retrofit_mvvm_databinding.util;
 
+import android.databinding.BindingAdapter;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
@@ -10,15 +11,25 @@ import static br.com.madebygallo.poc_retrofit_mvvm_databinding.util.ConstantsUti
  * Created by RaqGallo on 08/07/2018
  */
 
-public class BindingAdapter {
+public class BindingAdapterUtil {
 
-    @android.databinding.BindingAdapter({"app:srcPopMovieImage"})
+    @BindingAdapter({"app:srcPopMovieImage"})
     public static void getPopMovieImageFromUrl(ImageView imageView, String imageUrl) {
         String imagePath = BASE_IMAGE_URL + imageUrl;
         Picasso.get()
                 .load(imagePath)
                 .error(android.R.drawable.stat_notify_error)
                 .resize(100, 100)
+                .into(imageView);
+    }
+
+    @BindingAdapter({"app:srcUpcomingImage"})
+    public static void getUpcomingImageFromUrl(ImageView imageView, String imageUrl) {
+        String imagePath = BASE_IMAGE_URL + imageUrl;
+        Picasso.get()
+                .load(imagePath)
+                .error(android.R.drawable.stat_notify_error)
+                .resize(1030, 900)
                 .into(imageView);
     }
 }
