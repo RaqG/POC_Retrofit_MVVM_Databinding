@@ -42,6 +42,11 @@ public class PopMovieAdapter extends RecyclerView.Adapter<PopMovieAdapter.PopMov
         return movieList.size();
     }
 
+    public void addAllOnList(List<Movie> movies) {
+        this.movieList.addAll(movies);
+        notifyDataSetChanged();
+    }
+
     public class PopMovieViewHolder extends RecyclerView.ViewHolder {
 
         ItemPopularMovieBinding binding;

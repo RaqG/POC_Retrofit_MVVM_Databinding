@@ -10,12 +10,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.R;
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.model.Movie;
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.ui.adapter.PopMovieAdapter;
+import br.com.madebygallo.poc_retrofit_mvvm_databinding.util.EndlessScrollListener;
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.viewmodel.PopularMoviesViewModel;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,11 +30,14 @@ import butterknife.ButterKnife;
 public class PopularMoviesTab extends Fragment {
     private PopularMoviesViewModel viewModel;
 
-    private RecyclerView.Adapter adapter;
+    private PopMovieAdapter adapter;
     private LinearLayoutManager manager;
 
     @BindView(R.id.popular_movie_recycler_view)
     RecyclerView recyclerView;
+
+    @BindView(R.id.popular_movie_progress_bar)
+    ProgressBar progressBar;
 
     public PopularMoviesTab() {
     }
@@ -51,21 +57,35 @@ public class PopularMoviesTab extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        manager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(manager);
-
         viewModel = ViewModelProviders.of(this).get(PopularMoviesViewModel.class);
         viewModel.getListMutableLiveData().observe(this, new Observer<List<Movie>>() {
             @Override
             public void onChanged(@Nullable List<Movie> movies) {
-                if (movies != null) {
-                    adapter = new PopMovieAdapter(movies);
-                    recyclerView.setAdapter(adapter);
-                }
+                if (movies == null)
+                    return;
+                progressBar.setVisibility(View.GONE);
+                adapter.addAllOnList(movies);
             }
         });
 
-        viewModel.init();
+        viewModel.init(1);
+        setupCustomAdapter(new ArrayList<Movie>());
+    }
 
+    private void setupCustomAdapter(List<Movie> movies) {
+        manager = new LinearLayoutManager(getActivity());
+        recyclerView.setHasFixedSize(false);
+        recyclerView.setLayoutManager(manager);
+        adapter = new PopMovieAdapter(movies);
+        recyclerView.setAdapter(adapter);
+        recyclerView.addOnScrollListener(
+                new EndlessScrollListener(manager) {
+                    @Override
+                    public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
+                        viewModel.loadMore(++page);
+                        progressBar.setVisibility(View.VISIBLE);
+                    }
+                }
+        );
     }
 }

@@ -27,14 +27,14 @@ public class UpcomingMoviesViewModel extends ViewModel {
         return listMutableLiveData;
     }
 
-    public void init() {
+    public void init(int page) {
         RetrofitConfig retrofitConfig = new RetrofitConfig();
         MoviesService service = retrofitConfig.getMoviesService();
-        initService(service);
+        initService(service, page);
     }
 
-    private void initService(final MoviesService service) {
-        service.getUpcomings(API_KEY).enqueue(new Callback<MovieResponse>() {
+    private void initService(final MoviesService service, final int page) {
+        service.getUpcomings(API_KEY, page).enqueue(new Callback<MovieResponse>() {
             @Override
             public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
                 listMutableLiveData.setValue(response.body().getResults());
@@ -43,8 +43,12 @@ public class UpcomingMoviesViewModel extends ViewModel {
             @Override
             public void onFailure(Call<MovieResponse> call, Throwable t) {
                 listMutableLiveData.setValue(null);
-                initService(service);
+                initService(service, page);
             }
         });
+    }
+
+    public void loadMore(int totalItemsCount) {
+        init(totalItemsCount);
     }
 }

@@ -12,5 +12,5 @@ import retrofit2.http.Query;
 public interface TvShowService {
 
     @GET("/3/tv/popular/")
-    Call<TvShowResponse> getPopulars(@Query("api_key") String apiKey);
+    Call<TvShowResponse> getPopulars(@Query("api_key") String apiKey, @Query("page") int page);
 }

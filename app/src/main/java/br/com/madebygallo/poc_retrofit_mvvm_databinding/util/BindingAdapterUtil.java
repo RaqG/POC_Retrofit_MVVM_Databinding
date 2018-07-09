@@ -26,10 +26,19 @@ public class BindingAdapterUtil {
     @BindingAdapter({"app:srcUpcomingImage"})
     public static void getUpcomingImageFromUrl(ImageView imageView, String imageUrl) {
         String imagePath = BASE_IMAGE_URL + imageUrl;
+
         Picasso.get()
                 .load(imagePath)
-                .error(android.R.drawable.stat_notify_error)
                 .resize(1030, 900)
                 .into(imageView);
+    }
+
+    @BindingAdapter({"app:background"})
+    public static void getBackgroundFromUri(ImageView layout, String path) {
+        String image = BASE_IMAGE_URL + path;
+        Picasso.get()
+                .load(image)
+                .error(android.R.drawable.stat_notify_error)
+                .into(layout);
     }
 }

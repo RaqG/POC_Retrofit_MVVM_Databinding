@@ -42,6 +42,11 @@ public class UpcomingMovieAdapter extends RecyclerView.Adapter<UpcomingMovieAdap
         return movies.size();
     }
 
+    public void addAllOnList(List<Movie> movies) {
+        this.movies.addAll(movies);
+        notifyDataSetChanged();
+    }
+
     public class UpcomingMovieViewHolder extends RecyclerView.ViewHolder {
 
         ItemUpcomingMovieBinding binding;
