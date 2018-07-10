@@ -11,4 +11,8 @@ public class ConstantsUtil {
     public static final String API_KEY = BuildConfig.ApiKey;
     public static final String BASE_URL = "https://api.themoviedb.org/";
     public static final String BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w500";
+
+    public static final String POP_MOVIE = "popularMovie";
+    public static final String POP_TV_SERIE = "popularTvSerie";
+    public static final String UPCOMING_MOVIE = "upcomingMovie";
 }

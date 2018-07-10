@@ -59,8 +59,6 @@ dependencies {
     implementation "android.arch.lifecycle:viewmodel:1.1.1"
     // alternatively, just LiveData
     implementation "android.arch.lifecycle:livedata:1.1.1"
-    // Paging
-    implementation 'android.arch.paging:runtime:1.0.1'
 
     // Circle Imageview
     implementation 'de.hdodenhof:circleimageview:2.2.0'
