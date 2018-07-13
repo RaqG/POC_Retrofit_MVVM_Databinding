@@ -27,7 +27,7 @@ import butterknife.ButterKnife;
  * Created by RaqGallo on 08/07/2018
  */
 
-public class PopularTvSeriesTab extends Fragment {
+public class PopularTvShowsTab extends Fragment {
 
     PopularTvShowViewModel viewModel;
     private GridLayoutManager manager;
@@ -39,18 +39,18 @@ public class PopularTvSeriesTab extends Fragment {
     @BindView(R.id.pop_tv_serie_progress_bar)
     ProgressBar progressBar;
 
-    public PopularTvSeriesTab() {
+    public PopularTvShowsTab() {
     }
 
-    public static PopularTvSeriesTab newInstance() {
-        PopularTvSeriesTab fragment = new PopularTvSeriesTab();
+    public static PopularTvShowsTab newInstance() {
+        PopularTvShowsTab fragment = new PopularTvShowsTab();
         return fragment;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_popular_tv_series_tab, container, false);
+        View view = inflater.inflate(R.layout.fragment_popular_tv_shows_tab, container, false);
         ButterKnife.bind(this, view);
         return view;
     }

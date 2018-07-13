@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="br.com.madebygallo.poc_retrofit_mvvm_databinding.util.binding.BindingConversionUtil" />
+
+        <variable
+            name="tvShowDetail"
+            type="br.com.madebygallo.poc_retrofit_mvvm_databinding.model.TvShowDetail" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linear_title_rating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-black"
+                android:gravity="start|center_vertical"
+                android:text="@{tvShowDetail.name}"
+                android:textColor="@color/colorIcons"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:orientation="vertical">
+
+                <RatingBar
+                    style="?attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.01"
+                    android:numStars="10"
+                    android:rating="@{BindingConversionUtil.stringToFloat(`` + tvShowDetail.vote_average)}"
+                    android:stepSize="0.1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|center_vertical"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="0.5"
+                    android:gravity="center|center_vertical"
+                    android:text="@{` ` + tvShowDetail.vote_average + `/10`}"
+                    android:textColor="@color/colorIcons"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/image_backdrop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:landscapeBackground="@{tvShowDetail.backdrop_path}"
+            app:layout_constraintTop_toBottomOf="@+id/linear_title_rating" />
+
+        <TextView
+            android:id="@+id/first_air_date_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="First air date:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_backdrop" />
+
+        <TextView
+            android:id="@+id/text_first_air_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@{tvShowDetail.first_air_date}"
+            android:textColor="@color/colorIcons"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/first_air_date_title"
+            app:layout_constraintStart_toEndOf="@+id/first_air_date_title"
+            app:layout_constraintTop_toTopOf="@+id/first_air_date_title" />
+
+        <LinearLayout
+            android:id="@+id/linear_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:visibility="@{tvShowDetail.in_production==false ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/first_air_date_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/first_air_date_title">
+
+            <TextView
+                android:id="@+id/first_last_date_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Last air date:"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/text_last_air_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@{tvShowDetail.last_air_date}"
+                android:textColor="@color/colorIcons"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_overview_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/overview_hint"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/first_air_date_title" />
+
+        <TextView
+            android:id="@+id/text_overview_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@{tvShowDetail.overview}"
+            android:textColor="@color/colorIcons"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_overview_title" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

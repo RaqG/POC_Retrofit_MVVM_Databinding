@@ -5,7 +5,6 @@ import com.google.gson.GsonBuilder;
 
 import java.util.concurrent.TimeUnit;
 
-import br.com.madebygallo.poc_retrofit_mvvm_databinding.service.MovieDetailService;
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.service.MoviesService;
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.service.TvShowService;
 import okhttp3.OkHttpClient;
@@ -36,8 +35,6 @@ public class RetrofitConfig {
     public TvShowService getTvShowService() {
         return this.retrofit.create(TvShowService.class);
     }
-
-    public MovieDetailService getMovieDetailService() { return this.retrofit.create(MovieDetailService.class); }
 
     private OkHttpClient getOkHttpClient() {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();

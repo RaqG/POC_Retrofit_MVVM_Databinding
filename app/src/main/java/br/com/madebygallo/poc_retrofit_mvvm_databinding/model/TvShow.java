@@ -4,11 +4,13 @@ import android.databinding.BaseObservable;
 
 import com.google.gson.annotations.Expose;
 
+import java.io.Serializable;
+
 /**
  * Created by RaqGallo on 07/07/2018
  */
 
-public class TvShow extends BaseObservable {
+public class TvShow extends BaseObservable implements Serializable {
 
     @Expose
     private String original_name;

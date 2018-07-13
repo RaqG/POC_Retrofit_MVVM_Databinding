@@ -10,5 +10,24 @@
     <color name="colorIcons">#FFFFFF</color>
     <color name="colorDivider">#BDBDBD</color>
     <color name="colorDetailBackground">#64f3f4f3</color>
+    <color name="colorTvShowDetailBackground">#252525</color>
+
+    <!-- Vote Average Colors -->
+    <!-- Color for average between 0 and 2 -->
+    <color name="lowest_average">#D93218</color>
+    <!-- Color for average between 2 and 4 -->
+    <color name="lower_average">#E13A20</color>
+    <!-- Color for average between 4 and 5 -->
+    <color name="low_average">#E75F40</color>
+    <!-- Color for average between 5 and 6 -->
+    <color name="middle_average">#FC6644</color>
+    <!-- Color for average between 6 and 7 -->
+    <color name="high_average">#FF7D50</color>
+    <!-- Color for average between 7 and 8 -->
+    <color name="higher_average">#F59723</color>
+    <!-- Color for average between 8 and 9 -->
+    <color name="highest_average">#DBA914</color>
+    <!-- Color for average between 9 and 10 -->
+    <color name="excellent_average">#FFF700</color>
 
 </resources>

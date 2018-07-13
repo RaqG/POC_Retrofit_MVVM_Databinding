@@ -1,6 +1,7 @@
-package br.com.madebygallo.poc_retrofit_mvvm_databinding.util;
+package br.com.madebygallo.poc_retrofit_mvvm_databinding.util.binding;
 
 import android.databinding.BindingAdapter;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,6 +11,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.model.Genre;
+import br.com.madebygallo.poc_retrofit_mvvm_databinding.model.Network;
+import br.com.madebygallo.poc_retrofit_mvvm_databinding.model.TvShowDetail;
 
 import static br.com.madebygallo.poc_retrofit_mvvm_databinding.util.ConstantsUtil.BASE_IMAGE_URL;
 
@@ -48,6 +51,16 @@ public class BindingAdapterUtil {
                 .into(layout);
     }
 
+    @BindingAdapter({"app:landscapeBackground"})
+    public static void getLandscapeBackground(ImageView imageView, String path) {
+        String image = BASE_IMAGE_URL + path;
+        Picasso.get()
+                .load(image)
+                .resize(1100, 600)
+                .error(android.R.drawable.stat_notify_error)
+                .into(imageView);
+    }
+
     @BindingAdapter({"app:poster"})
     public static void getPosterFromUri(ImageView layout, String path) {
         String image = BASE_IMAGE_URL + path;
@@ -55,6 +68,17 @@ public class BindingAdapterUtil {
                 .load(image)
                 .resize(550, 750)
                 .into(layout);
+    }
+
+    @BindingAdapter({"app:networkLogo"})
+    public static void getLogoFromUri(ImageView layout, List<Network> networks) {
+        if (networks != null) {
+            String image = BASE_IMAGE_URL + networks.get(0).getLogo_path();
+            Picasso.get()
+                    .load(image)
+                    .resize(240, 150)
+                    .into(layout);
+        }
     }
 
     @BindingAdapter(value = {"titleText", "dateText"})
@@ -77,5 +101,10 @@ public class BindingAdapterUtil {
             }
         } else
             textView.setText("");
+    }
+
+    @BindingAdapter({"app:tvShowDetail"})
+    public TvShowDetail getTvShowDetail(View v, TvShowDetail tvShowDetail) {
+        return tvShowDetail;
     }
 }

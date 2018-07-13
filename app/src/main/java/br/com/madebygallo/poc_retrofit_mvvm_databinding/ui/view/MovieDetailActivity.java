@@ -1,7 +1,5 @@
 package br.com.madebygallo.poc_retrofit_mvvm_databinding.ui.view;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
@@ -20,7 +18,7 @@ import br.com.madebygallo.poc_retrofit_mvvm_databinding.viewmodel.MovieDetailVie
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static br.com.madebygallo.poc_retrofit_mvvm_databinding.util.ConstantsUtil.POP_MOVIE;
+import static br.com.madebygallo.poc_retrofit_mvvm_databinding.util.ConstantsUtil.MOVIE;
 
 /**
  * Created by RaqGallo on 09/07/2018
@@ -45,7 +43,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         layout.setVisibility(View.GONE);
         progressBar.setVisibility(View.VISIBLE);
 
-        Movie movie = (Movie) getIntent().getSerializableExtra(POP_MOVIE);
+        Movie movie = (Movie) getIntent().getSerializableExtra(MOVIE);
         viewModel = ViewModelProviders.of(this).get(MovieDetailViewModel.class);
         viewModel.init(movie.getId());
 

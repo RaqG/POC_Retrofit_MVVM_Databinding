@@ -28,7 +28,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/image_wine"
+                android:id="@+id/image_movie"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginLeft="8dp"
@@ -63,7 +63,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_weight="0.01"
-                android:background="@drawable/circle_rating"
+                android:background="@drawable/circle_average"
                 android:fontFamily="sans-serif"
                 android:gravity="center"
                 android:text="@{String.valueOf(popMovie.vote_average)}"

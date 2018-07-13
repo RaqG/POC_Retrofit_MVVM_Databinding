@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="tvShowDetail"
+            type="br.com.madebygallo.poc_retrofit_mvvm_databinding.model.TvShowDetail" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/genre_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_vertical"
+            android:text="Genres:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.pchmn.materialchips.ChipView
+            android:id="@+id/genre_chips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical"
+            app:backgroundColor="@color/colorPrimary"
+            app:hasAvatarIcon="false"
+            app:label="Chip 6"
+            app:labelColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/season_hint"
+            app:layout_constraintStart_toEndOf="@+id/genre_hint"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/season_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_vertical"
+            android:text="@string/seasons_hint"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/genre_hint" />
+
+        <TextView
+            android:id="@+id/season_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_vertical"
+            android:text="@{String.valueOf(tvShowDetail.number_of_seasons)}"
+            android:textColor="@color/colorIcons"
+            app:layout_constraintBottom_toBottomOf="@+id/season_hint"
+            app:layout_constraintStart_toEndOf="@+id/season_hint"
+            app:layout_constraintTop_toTopOf="@+id/season_hint" />
+
+        <TextView
+            android:id="@+id/episode_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_vertical"
+            android:text="@string/episodes_hint"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/episode_number"
+            app:layout_constraintTop_toBottomOf="@+id/genre_hint" />
+
+        <TextView
+            android:id="@+id/episode_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_vertical"
+            android:text="@{String.valueOf(tvShowDetail.number_of_episodes)}"
+            android:textColor="@color/colorIcons"
+            app:layout_constraintBottom_toBottomOf="@+id/episode_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/episode_hint" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

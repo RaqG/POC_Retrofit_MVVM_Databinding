@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
         <import type="android.view.View" />
 
-        <import type="br.com.madebygallo.poc_retrofit_mvvm_databinding.util.BindingConversionUtil" />
+        <import type="br.com.madebygallo.poc_retrofit_mvvm_databinding.util.binding.BindingConversionUtil" />
 
         <variable
             name="popMovie"
@@ -63,10 +62,10 @@
                     app:poster="@{popMovie.poster_path}" />
 
                 <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_gravity="left"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
@@ -189,7 +188,7 @@
                         android:layout_marginRight="8dp"
                         android:layout_marginStart="8dp"
                         android:fontFamily="sans-serif-black"
-                        android:text="Overview"
+                        android:text="@string/overview_hint"
                         android:textColor="@color/colorPrimary"
                         android:textSize="18sp" />
 

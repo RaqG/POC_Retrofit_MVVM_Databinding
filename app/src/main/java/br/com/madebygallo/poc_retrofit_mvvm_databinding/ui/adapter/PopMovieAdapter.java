@@ -2,6 +2,7 @@ package br.com.madebygallo.poc_retrofit_mvvm_databinding.ui.adapter;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,7 +16,7 @@ import br.com.madebygallo.poc_retrofit_mvvm_databinding.databinding.ItemPopularM
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.model.Movie;
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.ui.view.MovieDetailActivity;
 
-import static br.com.madebygallo.poc_retrofit_mvvm_databinding.util.ConstantsUtil.POP_MOVIE;
+import static br.com.madebygallo.poc_retrofit_mvvm_databinding.util.ConstantsUtil.MOVIE;
 
 /**
  * Created by RaqGallo on 08/07/2018
@@ -73,7 +74,7 @@ public class PopMovieAdapter extends RecyclerView.Adapter<PopMovieAdapter.PopMov
                 @Override
                 public void onClick(View view) {
                     Intent it = new Intent(view.getContext(), MovieDetailActivity.class);
-                    it.putExtra(POP_MOVIE, binding.getPopMovie());
+                    it.putExtra(MOVIE, binding.getPopMovie());
                     view.getContext().startActivity(it);
                 }
             });

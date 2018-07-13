@@ -1,4 +1,4 @@
-package br.com.madebygallo.poc_retrofit_mvvm_databinding.util;
+package br.com.madebygallo.poc_retrofit_mvvm_databinding.util.binding;
 
 import android.databinding.BindingConversion;
 import android.databinding.InverseMethod;

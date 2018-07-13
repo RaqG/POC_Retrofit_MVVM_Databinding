@@ -1,0 +1,106 @@
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="tvShowDetail"
+            type="br.com.madebygallo.poc_retrofit_mvvm_databinding.model.TvShowDetail" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTvShowDetailBackground">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <include
+                android:id="@+id/content_tv_show_detail"
+                layout="@layout/content_tv_show_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tvShowDetail="@{tvShowDetail}" />
+
+            <View
+                android:id="@+id/divider_detail"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/content_tv_show_detail"
+                app:layout_constraintBottom_toTopOf="@+id/content_tv_show_genre"/>
+
+            <include
+                android:id="@+id/content_tv_show_genre"
+                layout="@layout/content_tv_show_genre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_detail"
+                app:tvShowDetail="@{tvShowDetail}"/>
+
+            <View
+                android:id="@+id/divider_genre"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/content_tv_show_genre"
+                app:layout_constraintBottom_toTopOf="@+id/content_tv_show_network"/>
+
+            <include
+                android:id="@+id/content_tv_show_network"
+                layout="@layout/content_tv_show_network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_genre"
+                app:tvShowDetail="@{tvShowDetail}"/>
+
+            <View
+                android:id="@+id/divider_network"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/content_tv_show_network"
+                app:layout_constraintBottom_toTopOf="@+id/content_tv_show_creator"/>
+
+            <include
+                android:id="@+id/content_tv_show_creator"
+                layout="@layout/content_tv_show_creator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_network"
+                app:tvShowDetail="@{tvShowDetail}"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

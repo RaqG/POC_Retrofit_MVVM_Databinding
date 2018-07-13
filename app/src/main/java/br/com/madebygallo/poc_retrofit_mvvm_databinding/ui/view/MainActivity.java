@@ -10,7 +10,7 @@ import android.support.v7.widget.Toolbar;
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.R;
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.ui.adapter.CustomPagerAdapter;
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.ui.fragments.PopularMoviesTab;
-import br.com.madebygallo.poc_retrofit_mvvm_databinding.ui.fragments.PopularTvSeriesTab;
+import br.com.madebygallo.poc_retrofit_mvvm_databinding.ui.fragments.PopularTvShowsTab;
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.ui.fragments.UpcomingMoviesTab;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         CustomPagerAdapter adapter = new CustomPagerAdapter(getSupportFragmentManager());
         adapter.addTab(new PopularMoviesTab(), getString(R.string.pop_movies_title));
         adapter.addTab(new UpcomingMoviesTab(), getString(R.string.upcoming_title));
-        adapter.addTab(new PopularTvSeriesTab(), getString(R.string.pop_tv_show_title));
+        adapter.addTab(new PopularTvShowsTab(), getString(R.string.pop_tv_show_title));
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
     }

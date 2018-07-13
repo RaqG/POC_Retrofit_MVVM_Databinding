@@ -24,6 +24,9 @@
         <activity
             android:name=".ui.view.MovieDetailActivity"
             android:parentActivityName=".ui.view.MainActivity" />
+        <activity
+            android:name=".ui.view.TvShowDetailActivity"
+            android:parentActivityName=".ui.view.MainActivity" />
     </application>
 
 </manifest>

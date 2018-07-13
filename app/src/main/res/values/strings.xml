@@ -3,5 +3,12 @@
 
     <string name="pop_movies_title">Pop Movies</string>
     <string name="upcoming_title">Upcoming Movies</string>
-    <string name="pop_tv_show_title">Pop TV Serie</string>
+    <string name="pop_tv_show_title">Pop TV Show</string>
+
+    <string name="fragment_tv_show_detail">fragment_tv_show_detail</string>
+    <string name="fragment_tv_show_genre">fragment_tv_show_genre</string>
+    <string name="fragment_tv_show_creator">fragment_tv_show_creator</string>
+    <string name="overview_hint">Overview</string>
+    <string name="seasons_hint">No. of seasons:</string>
+    <string name="episodes_hint">No. of episodes:</string>
 </resources>
