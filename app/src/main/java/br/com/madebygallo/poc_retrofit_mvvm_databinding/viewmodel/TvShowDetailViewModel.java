@@ -1,7 +1,9 @@
 package br.com.madebygallo.poc_retrofit_mvvm_databinding.viewmodel;
 
+import android.app.Application;
+import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
+import android.support.annotation.NonNull;
 
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.model.TvShowDetail;
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.service.TvShowService;
@@ -16,7 +18,11 @@ import static br.com.madebygallo.poc_retrofit_mvvm_databinding.util.ConstantsUti
  * Created by RaqGallo on 12/07/2018
  */
 
-public class TvShowDetailViewModel extends ViewModel {
+public class TvShowDetailViewModel extends AndroidViewModel {
+
+    public TvShowDetailViewModel(@NonNull Application application) {
+        super(application);
+    }
 
     MutableLiveData<TvShowDetail> tvShowDetailMutableLiveData = new MutableLiveData<>();
 

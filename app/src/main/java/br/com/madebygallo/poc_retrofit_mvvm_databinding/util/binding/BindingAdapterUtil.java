@@ -1,7 +1,6 @@
 package br.com.madebygallo.poc_retrofit_mvvm_databinding.util.binding;
 
 import android.databinding.BindingAdapter;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,7 +11,6 @@ import java.util.List;
 
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.model.Genre;
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.model.Network;
-import br.com.madebygallo.poc_retrofit_mvvm_databinding.model.TvShowDetail;
 
 import static br.com.madebygallo.poc_retrofit_mvvm_databinding.util.ConstantsUtil.BASE_IMAGE_URL;
 
@@ -103,8 +101,13 @@ public class BindingAdapterUtil {
             textView.setText("");
     }
 
-    @BindingAdapter({"app:tvShowDetail"})
-    public TvShowDetail getTvShowDetail(View v, TvShowDetail tvShowDetail) {
-        return tvShowDetail;
+    @BindingAdapter({"isHomepageEmpty", "networkName"})
+    public static void getTvShowDetail(TextView view, String homepage, String networkName) {
+        if (homepage != null && networkName != null) {
+            if (homepage.equals(""))
+                view.setText(networkName);
+            else
+                view.setText(homepage);
+        }
     }
 }

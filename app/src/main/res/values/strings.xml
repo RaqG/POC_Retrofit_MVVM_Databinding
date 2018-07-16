@@ -11,4 +11,5 @@
     <string name="overview_hint">Overview</string>
     <string name="seasons_hint">No. of seasons:</string>
     <string name="episodes_hint">No. of episodes:</string>
+    <string name="genres_hint">Genres:</string>
 </resources>
