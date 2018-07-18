@@ -38,7 +38,7 @@
             app:background="@{popMovie.poster_path}" />
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/constraint_layout"
+            android:id="@+id/constraint_layout_movie_detail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="8dp"

@@ -37,7 +37,7 @@ public class TvShowDetail {
     @Expose
     private List<Genre> genres;
     @Expose
-    private List<Creator> creators;
+    private List<Creator> created_by;
     @Expose
     private List<Network> networks;
 
@@ -148,12 +148,12 @@ public class TvShowDetail {
         this.genres = genres;
     }
 
-    public List<Creator> getCreators() {
-        return creators;
+    public List<Creator> getCreated_by() {
+        return created_by;
     }
 
-    public void setCreators(List<Creator> creators) {
-        this.creators = creators;
+    public void setCreated_by(List<Creator> created_by) {
+        this.created_by = created_by;
     }
 
     public List<Network> getNetworks() {

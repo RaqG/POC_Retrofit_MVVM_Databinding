@@ -29,7 +29,6 @@ public class CustomPagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         return fragments.get(position);
-
     }
 
     @Override

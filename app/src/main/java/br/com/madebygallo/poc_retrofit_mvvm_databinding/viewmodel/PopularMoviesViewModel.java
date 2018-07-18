@@ -27,7 +27,6 @@ public class PopularMoviesViewModel extends ViewModel {
         return listMutableLiveData;
     }
 
-
     public void init(int page) {
         RetrofitConfig retrofitConfig = new RetrofitConfig();
         MoviesService service = retrofitConfig.getMoviesService();

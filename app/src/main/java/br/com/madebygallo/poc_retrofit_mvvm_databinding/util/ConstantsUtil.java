@@ -13,5 +13,4 @@ public class ConstantsUtil {
     public static final String BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w500";
 
     public static final String MOVIE = "movie";
-    public static final String TV_SHOW = "tvShow";
 }

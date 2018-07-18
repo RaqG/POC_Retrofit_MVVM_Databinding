@@ -13,6 +13,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.view.MainActivity"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden">
@@ -28,6 +29,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.view.TvShowDetailActivity"
+            android:label="Detail"
             android:parentActivityName=".ui.view.MainActivity"
             android:screenOrientation="portrait" />
     </application>

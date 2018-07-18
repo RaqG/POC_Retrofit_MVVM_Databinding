@@ -9,6 +9,7 @@ import com.squareup.picasso.Picasso;
 import java.util.Iterator;
 import java.util.List;
 
+import br.com.madebygallo.poc_retrofit_mvvm_databinding.R;
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.model.Genre;
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.model.Network;
 
@@ -65,6 +66,16 @@ public class BindingAdapterUtil {
         Picasso.get()
                 .load(image)
                 .resize(550, 750)
+                .into(layout);
+    }
+
+    @BindingAdapter({"app:createdBy"})
+    public static void getCreatorFromUri(ImageView layout, String path) {
+        String image = BASE_IMAGE_URL + path;
+        Picasso.get()
+                .load(image)
+                .resize(550, 750)
+                .error(R.drawable.ic_account_circle_white)
                 .into(layout);
     }
 

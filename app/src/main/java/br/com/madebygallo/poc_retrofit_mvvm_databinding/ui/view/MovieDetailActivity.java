@@ -28,7 +28,7 @@ public class MovieDetailActivity extends AppCompatActivity {
 
     private MovieDetailViewModel viewModel;
 
-    @BindView(R.id.constraint_layout)
+    @BindView(R.id.constraint_layout_movie_detail)
     ConstraintLayout layout;
 
     @BindView(R.id.movie_detail_progress_bar)

@@ -15,8 +15,6 @@ import br.com.madebygallo.poc_retrofit_mvvm_databinding.databinding.ItemPopularT
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.model.TvShow;
 import br.com.madebygallo.poc_retrofit_mvvm_databinding.ui.view.TvShowDetailActivity;
 
-import static br.com.madebygallo.poc_retrofit_mvvm_databinding.util.ConstantsUtil.TV_SHOW;
-
 /**
  * Created by RaqGallo on 08/07/2018
  */

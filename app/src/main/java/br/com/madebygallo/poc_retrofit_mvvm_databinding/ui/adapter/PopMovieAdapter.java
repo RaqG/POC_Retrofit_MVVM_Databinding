@@ -2,7 +2,6 @@ package br.com.madebygallo.poc_retrofit_mvvm_databinding.ui.adapter;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
